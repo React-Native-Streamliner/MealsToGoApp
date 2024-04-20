@@ -1,5 +1,4 @@
-import { StatusBar as ExpoStatusBar} from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, View, StatusBar } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View, StatusBar } from "react-native";
 
 export default function App() {
   return (
@@ -22,13 +21,13 @@ const styles = StyleSheet.create({
     marginTop: StatusBar.currentHeight,
   },
   search: {
-    backgroundColor: '#11EE11',
+    backgroundColor: "#11EE11",
     padding: 16,
   },
   list: {
     flex: 1,
-    backgroundColor: '#1e1eAA',
-    alignSelf: 'stretch',
-    padding: 16
-  }
+    backgroundColor: "#1e1eAA",
+    alignSelf: "stretch",
+    padding: 16,
+  },
 });
