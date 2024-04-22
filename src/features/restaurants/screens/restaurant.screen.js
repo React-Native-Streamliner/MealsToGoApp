@@ -1,4 +1,4 @@
-import { SafeAreaView, Text, StyleSheet, View, StatusBar } from "react-native";
+import { SafeAreaView, StyleSheet, View, StatusBar } from "react-native";
 import { Searchbar } from "react-native-paper";
 import RestaurantInfo from "../components/restaurant-info.component";
 
