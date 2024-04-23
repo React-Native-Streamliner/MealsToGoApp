@@ -14,7 +14,7 @@ const RestaurantInfo = ({ restaurant = {} }) => {
     isClosedTemporary,
   } = restaurant;
   return (
-    <Card>
+    <Card elevation={5} style={styles.card}>
       <Card.Cover source={{ uri: photos[0] }} style={styles.image} />
       <Card.Title title={name} style={styles.title} />
     </Card>
@@ -24,8 +24,12 @@ const RestaurantInfo = ({ restaurant = {} }) => {
 export default RestaurantInfo;
 
 const styles = StyleSheet.create({
+  card: {
+    backgroundColor: "white",
+  },
   image: {
     padding: 16,
+    backgroundColor: "white",
   },
   title: {
     padding: 0,
