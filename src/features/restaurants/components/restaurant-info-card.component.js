@@ -1,7 +1,7 @@
 import { StyleSheet, Text } from "react-native";
 import { Card, Button } from "react-native-paper";
 
-const RestaurantInfo = ({ restaurant = {} }) => {
+const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
     name = "Some Restaurant",
     icon,
@@ -21,7 +21,7 @@ const RestaurantInfo = ({ restaurant = {} }) => {
   );
 };
 
-export default RestaurantInfo;
+export default RestaurantInfoCard;
 
 const styles = StyleSheet.create({
   card: {
