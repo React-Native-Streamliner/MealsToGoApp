@@ -79,8 +79,12 @@ const RestaurantInfoCard = ({ restaurant = {} }) => {
           {isClosedTemporary && (
             <ClosedView>
               <ClosedLabel>CLOSED TEMPORARILY</ClosedLabel>
-              <Spacer variant="left.large" />
-              <Image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
+              <Spacer position="left" size="large">
+                <Image
+                  style={{ width: 15, height: 15 }}
+                  source={{ uri: icon }}
+                />
+              </Spacer>
             </ClosedView>
           )}
         </Details>
