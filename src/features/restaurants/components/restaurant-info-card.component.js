@@ -71,8 +71,8 @@ const RestaurantInfoCard = ({ restaurant = {} }) => {
         <Title>{name}</Title>
         <Details>
           <Rating>
-            {ratingArray.map((item) => (
-              <SvgXml xml={star} width="20" height="20" />
+            {ratingArray.map((item, index) => (
+              <SvgXml key={index} xml={star} width="20" height="20" />
             ))}
           </Rating>
           {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
@@ -81,6 +81,7 @@ const RestaurantInfoCard = ({ restaurant = {} }) => {
               <ClosedLabel>CLOSED TEMPORARILY</ClosedLabel>
               <Spacer position="left" size="large">
                 <Image
+                  // eslint-disable-next-line react-native/no-inline-styles
                   style={{ width: 15, height: 15 }}
                   source={{ uri: icon }}
                 />
