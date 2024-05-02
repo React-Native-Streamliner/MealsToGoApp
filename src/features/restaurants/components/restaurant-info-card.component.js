@@ -1,53 +1,18 @@
-import { Text, View, Image } from "react-native";
-import { Card } from "react-native-paper";
-import styled from "styled-components";
 import { SvgXml } from "react-native-svg";
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
 import Spacer from "../../../components/spacer/spacer.component";
-
-const RestaurantCard = styled(Card)`
-  background-color: ${(props) => props.theme.colors.bg.primary};
-`;
-
-const RestaurantCardCover = styled(Card.Cover)`
-  padding: ${(props) => props.theme.space[3]};
-  background-color: ${(props) => props.theme.colors.bg.primary};
-`;
-
-const Address = styled(Text)`
-  font-family: ${(props) => props.theme.fonts.body};
-  font-size: ${(props) => props.theme.fontSizes.caption};
-`;
-
-const Title = styled(Text)`
-  font-family: ${(props) => props.theme.fonts.heading};
-  font-size: ${(props) => props.theme.fontSizes.body};
-  color: ${(props) => props.theme.colors.ui.primary};
-`;
-
-const Info = styled(View)`
-  padding: ${(props) => props.theme.space[3]};
-`;
-
-const ClosedLabel = styled(Text)`
-  color: red;
-`;
-
-const ClosedView = styled(View)`
-  flex-direction: row;
-`;
-
-const Details = styled(View)`
-  flex-direction: row;
-  justify-content: space-between;
-`;
-
-const Rating = styled(View)`
-  flex-direction: row;
-  padding-top: ${(props) => props.theme.space[2]};
-  padding-bottom: ${(props) => props.theme.space[2]};
-`;
+import { Text } from "../../../components/topography/text.component";
+import {
+  Icon,
+  RestaurantCard,
+  RestaurantCardCover,
+  Info,
+  Details,
+  Rating,
+  ClosedView,
+  Address,
+} from "./restaurant-info-card.styles";
 
 const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
@@ -68,7 +33,7 @@ const RestaurantInfoCard = ({ restaurant = {} }) => {
     <RestaurantCard elevation={5}>
       <RestaurantCardCover source={{ uri: photos[0] }} />
       <Info>
-        <Title>{name}</Title>
+        <Text variant="label">{name}</Text>
         <Details>
           <Rating>
             {ratingArray.map((item, index) => (
@@ -78,13 +43,9 @@ const RestaurantInfoCard = ({ restaurant = {} }) => {
           {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
           {isClosedTemporary && (
             <ClosedView>
-              <ClosedLabel>CLOSED TEMPORARILY</ClosedLabel>
+              <Text variant="error">CLOSED TEMPORARILY</Text>
               <Spacer position="left" size="large">
-                <Image
-                  // eslint-disable-next-line react-native/no-inline-styles
-                  style={{ width: 15, height: 15 }}
-                  source={{ uri: icon }}
-                />
+                <Icon source={{ uri: icon }} />
               </Spacer>
             </ClosedView>
           )}
