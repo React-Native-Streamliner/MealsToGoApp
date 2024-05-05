@@ -17,7 +17,7 @@ const RestaurantList = styled(FlatList).attrs({
   contentContainerStyle: {
     padding: 16,
   },
-});
+})``;
 
 const RestaurantsScreen = () => {
   return (
