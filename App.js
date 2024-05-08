@@ -5,7 +5,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { View, Text } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { restraurantsRequest } from "./src/services/restaurants/restaurants.service";
 
 import {
   useFonts as useOswald,
