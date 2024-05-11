@@ -30,7 +30,7 @@ const RestaurantsScreen = () => {
       </SearchContainer>
       <RestaurantList
         data={restaurants}
-        renderItem={(item) => {
+        renderItem={({ item }) => {
           return <RestaurantInfoCard restaurant={item} />;
         }}
         keyExtractor={(item) => item.name}
