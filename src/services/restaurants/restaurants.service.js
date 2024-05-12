@@ -10,7 +10,6 @@ export const restraurantsRequest = (location = "37.7749295,-122.4194155") => {
     resolve(mock);
   });
 };
-
 export const restaurantsTransform = ({ results = [] }) => {
   const mappedResults = results.map((restraurant) => {
     restraurant.photos = restraurant.photos.map((p) => {
