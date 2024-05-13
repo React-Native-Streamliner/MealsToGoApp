@@ -4,6 +4,7 @@ import RestaurantInfoCard from "../components/restaurant-info-card.component";
 import styled from "styled-components";
 import { useContext } from "react";
 import { RestraurantContext } from "../../../services/restaurants/restaurant.context";
+import { ActivityIndicator } from "react-native-paper";
 
 const SafeArea = styled(SafeAreaView)`
   flex: 1;
@@ -23,6 +24,10 @@ const RestaurantList = styled(FlatList).attrs({
 
 const RestaurantsScreen = () => {
   const { isLoading, error, restaurants } = useContext(RestraurantContext);
+
+  if (isLoading) {
+    return <ActivityIndicator animating={true} />;
+  }
   return (
     <SafeArea>
       <SearchContainer>
