@@ -24,10 +24,6 @@ export const LocationContextProvider = ({ children }) => {
       });
   };
 
-  useEffect(() => {
-    onSearch();
-  }, []);
-
   return (
     <LocationContext.Provider
       value={{ isLoading, error, location, search: () => null, keyword }}
