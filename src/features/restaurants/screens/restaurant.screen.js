@@ -3,7 +3,8 @@ import RestaurantInfoCard from "../components/restaurant-info-card.component";
 import styled from "styled-components";
 import { useContext } from "react";
 import { RestraurantContext } from "../../../services/restaurants/restaurant.context";
-import { ActivityIndicator, Colors } from "react-native-paper";
+import { ActivityIndicator } from "react-native-paper";
+import { Search } from "../components/search.component";
 
 const SafeArea = styled(SafeAreaView)`
   flex: 1;
@@ -32,7 +33,7 @@ const RestaurantsScreen = () => {
   if (isLoading) {
     return (
       <LoadingContainer>
-        <Loading size={50} animating={true} color={Colors.blue300} />
+        <Loading size={50} animating={true} />
       </LoadingContainer>
     );
   }
